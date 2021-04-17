@@ -1,5 +1,12 @@
 import React from 'react'
 
-const Stats = ({text, number}) => <plaintext>{text} {number}</plaintext>
+const Stats = ({text, number}) => {
+  return (
+    <tr>
+      <td>{text}</td>
+      <td>{number}</td>
+    </tr>
+  )
+}
 
 export default Stats
