@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import Header from './Header'
 import Button from './Button'
 
 const App = () => {
@@ -25,17 +26,22 @@ const App = () => {
 
   return (
     <div>
+      <Header text='Anecdote of the day'/>
       {anecdotes[selected]}
       <br></br>
       has {votes[selected]} votes
       <Button 
         text='vote'
         onClick={vote}  
-      />
+        />
       <Button 
         text='next anecdote' 
         onClick={() => setSelected(Math.ceil((anecdotes.length - 1) * Math.random()))}
-      />
+        />
+      <Header text='Anecdote with most votes'/>
+      {anecdotes[votes.indexOf(Math.max(...votes))]}
+      <br></br>
+      has {Math.max(...votes)} votes
     </div>
   )
 }
