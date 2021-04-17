@@ -12,10 +12,26 @@ const App = () => {
   ]
    
   const [selected, setSelected] = useState(0)
- 
+  let array = new Array(anecdotes.length)
+  for (let i=0; i<anecdotes.length; i++) {
+    array[i] = 0
+  }
+  const [votes, setVotes] = useState(array)
+  const vote = () => {
+    const copy = [...votes]
+    copy[selected]++
+    setVotes(copy)
+  }
+
   return (
     <div>
       {anecdotes[selected]}
+      <br></br>
+      has {votes[selected]} votes
+      <Button 
+        text='vote'
+        onClick={vote}  
+      />
       <Button 
         text='next anecdote' 
         onClick={() => setSelected(Math.ceil((anecdotes.length - 1) * Math.random()))}
