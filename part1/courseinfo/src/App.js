@@ -1,7 +1,7 @@
 import React from 'react'
-import Header from './components/Header'
-import Content from './components/Content'
-import Total from './components/Total'
+import Header from './Header'
+import Content from './Content'
+import Total from './Total'
 
 const App = () => {
   const course = {
