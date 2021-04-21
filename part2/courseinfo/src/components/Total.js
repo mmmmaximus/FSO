@@ -1,10 +1,7 @@
 import React from 'react'
 
-const Total = (props) => {
-  let total = 0
-  for (let i=0; i < props.parts.length; i++) {
-    total += props.parts[i].exercises
-  }
+const Total = ({parts}) => {
+  const total = parts.map(part => part.exercises).reduce((a,b) => a+b)
 
   return (
     <p>
