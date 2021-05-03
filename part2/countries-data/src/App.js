@@ -11,6 +11,10 @@ const App = () => {
     setFilter(event.target.value)
   }
 
+  const showButton = (event) => {
+    setFilter(event.target.value)
+  }
+
   useEffect(() => {
     axios
       .get('https://restcountries.eu/rest/v2/all')
@@ -22,14 +26,7 @@ const App = () => {
   return (
     <div>
       <Filter func={changeFilter}/>
-      <Countries 
-        countries={
-          countries.filter(
-            country => country.name.toLowerCase().includes(filter.toLowerCase())
-          )
-        }
-        filter={filter}
-      />
+      <Countries countries={countries} filter={filter} showButton={showButton}/>
     </div>
   )
 }
