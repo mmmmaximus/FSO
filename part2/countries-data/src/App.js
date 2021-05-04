@@ -6,7 +6,7 @@ import Countries from './components/Countries'
 const App = () => {
   const [filter, setFilter] = useState('')
   const [countries, setCountries] = useState([])
-  
+
   const changeFilter = (event) => {
     setFilter(event.target.value)
   }
@@ -22,7 +22,7 @@ const App = () => {
         setCountries(response.data)
       })
   }, [])
-  
+
   return (
     <div>
       <Filter func={changeFilter}/>
