@@ -1,6 +1,6 @@
 import axios from 'axios'
 
-const baseUrl = 'http://localhost:3001/persons'
+const baseUrl = 'http://localhost:3001/persons/'
 
 const index = () => {
   return axios.get(baseUrl)
@@ -12,4 +12,8 @@ const create = (newContact) => {
     .then(response => response.data)
 }
 
-export default { index, create }
+const del = (id) => {
+  return axios.delete(`${baseUrl}${id}`)
+}
+
+export default { index, create, del }

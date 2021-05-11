@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react'
-import axios from 'axios'
 import Input from './components/Input'
 import PersonForm from './components/PersonForm'
 import Persons from './components/Persons'
@@ -37,6 +36,19 @@ const App = () => {
     }
   }
 
+  const deletePerson = (id, name) => {
+    if (window.confirm(`Delete ${name}?`)) {
+      phonebookService
+        .del(id)
+        .then(phonebookService
+          .index()
+          .then(persons =>
+            setPersons(persons.filter(person => person.id !== id))
+          )
+      )
+    }
+  }
+
   const changeFilter = (event) => {
     setNewFilter(event.target.value)
   }
@@ -54,7 +66,7 @@ const App = () => {
       <h2>add a new</h2>
       <PersonForm changeName={changeName} changeNumber={changeNumber} addContact={addContact}/>
       <h2>Numbers</h2>
-      <Persons persons={
+      <Persons deletePerson={deletePerson} persons={
         persons.filter(
           person => person.name.toLowerCase().includes(newFilter.toLowerCase())
         )
