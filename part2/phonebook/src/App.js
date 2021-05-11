@@ -19,15 +19,23 @@ const App = () => {
 
   const addContact = (event) => {
     event.preventDefault()
-    if (persons.map(person => person.name.toLowerCase()).includes(newName.toLowerCase())) {
+    if (newName === '' || newNumber === '') {
+      alert(`Name and Number must be filled in`)
+    } else if (persons.map(person => person.name.toLowerCase()).includes(newName.toLowerCase())) {
       alert(`${newName} is already added to phonebook`)
     } else {
-      setPersons(persons.concat({ name: newName, number: newNumber }))
-      setNewName('')
-      setNewNumber('')
+      axios
+        .post('http://localhost:3001/persons', { name: newName, number: newNumber })
+        .then(response => {
+          setPersons(persons.concat(response.data))
+          setNewName('')
+          setNewNumber('')
+          document.getElementById('name').value = ''
+          document.getElementById('number').value = ''
+        })
     }
   }
-  
+
   const changeFilter = (event) => {
     setNewFilter(event.target.value)
   }
