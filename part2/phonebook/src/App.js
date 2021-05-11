@@ -3,6 +3,7 @@ import axios from 'axios'
 import Input from './components/Input'
 import PersonForm from './components/PersonForm'
 import Persons from './components/Persons'
+import phonebookService from './services/phonebook'
 
 const App = () => {
   const [persons, setPersons] = useState([])
@@ -12,9 +13,9 @@ const App = () => {
 
 
   useEffect(() => {
-    axios
-      .get('http://localhost:3001/persons')
-      .then(response => setPersons(response.data))
+    phonebookService
+      .index()
+      .then(persons => setPersons(persons))
   }, [])
 
   const addContact = (event) => {
@@ -24,15 +25,15 @@ const App = () => {
     } else if (persons.map(person => person.name.toLowerCase()).includes(newName.toLowerCase())) {
       alert(`${newName} is already added to phonebook`)
     } else {
-      axios
-        .post('http://localhost:3001/persons', { name: newName, number: newNumber })
-        .then(response => {
-          setPersons(persons.concat(response.data))
-          setNewName('')
-          setNewNumber('')
-          document.getElementById('name').value = ''
-          document.getElementById('number').value = ''
+      phonebookService
+        .create({ name: newName, number: newNumber })
+        .then(person => {
+          setPersons(persons.concat(person))
         })
+      setNewName('')
+      setNewNumber('')
+      document.getElementById('name').value = ''
+      document.getElementById('number').value = ''
     }
   }
 
