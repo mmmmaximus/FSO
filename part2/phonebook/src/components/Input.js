@@ -1,9 +1,9 @@
 import React from 'react'
 
-const Input = ({text, func}) => {
+const Input = ({id, text, func}) => {
   return (
     <div>
-      {text}<input onChange={func} />
+      {text}<input id={id} onChange={func} />
     </div>
   )
 }
