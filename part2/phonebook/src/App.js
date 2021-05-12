@@ -22,13 +22,24 @@ const App = () => {
     if (newName === '' || newNumber === '') {
       alert(`Name and Number must be filled in`)
     } else if (persons.map(person => person.name.toLowerCase()).includes(newName.toLowerCase())) {
-      alert(`${newName} is already added to phonebook`)
+
+      if (persons.map(person => person.number).includes(newNumber)) {
+        alert(`${newName} is already added to phonebook`)
+      } else {
+        if (window.confirm(`${newName} is already added to phonebook, replace old number?`)) {
+          const changedPerson = persons.find(person => person.name === newName)
+          phonebookService
+            .update(changedPerson.id, { name: newName, number: newNumber })
+            .then(person => {
+              setPersons(persons.filter(person => person.name !== newName).concat(person))
+            })
+        }
+      }
+
     } else {
       phonebookService
         .create({ name: newName, number: newNumber })
-        .then(person => {
-          setPersons(persons.concat(person))
-        })
+        .then(person => setPersons(persons.concat(person)))
       setNewName('')
       setNewNumber('')
       document.getElementById('name').value = ''
@@ -42,9 +53,7 @@ const App = () => {
         .del(id)
         .then(phonebookService
           .index()
-          .then(persons =>
-            setPersons(persons.filter(person => person.id !== id))
-          )
+          .then(persons => setPersons(persons.filter(person => person.id !== id)))
       )
     }
   }
