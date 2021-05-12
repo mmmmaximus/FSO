@@ -33,6 +33,10 @@ const App = () => {
             .then(person => {
               setPersons(persons.filter(person => person.name !== newName).concat(person))
             })
+          setNewName('')
+          setNewNumber('')
+          document.getElementById('name').value = ''
+          document.getElementById('number').value = ''
         }
       }
 
