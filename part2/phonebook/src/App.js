@@ -11,6 +11,7 @@ const App = () => {
   const [newName, setNewName] = useState('')
   const [newNumber, setNewNumber] = useState('')
   const [errorMessage, setErrorMessage] = useState('')
+  const [messageType, setMessageType] = useState('')
   const changeFilter = (event) => {
     setNewFilter(event.target.value)
   }
@@ -47,11 +48,13 @@ const App = () => {
             .update(changedPerson.id, { name: newName, number: newNumber })
             .then(person => {
               setPersons(persons.filter(person => person.name !== newName).concat(person))
+              setMessageType('notification')
               setErrorMessage(`${person.name} has been updated`)
               setTimeout(() => {
                 setErrorMessage('')
               }, 1000)
             }).catch(err => {
+              setMessageType('error')
               setErrorMessage(`${newName} has already been deleted`)
               setTimeout(() => {
                 setErrorMessage('')
@@ -65,6 +68,7 @@ const App = () => {
         .create({ name: newName, number: newNumber })
         .then(person => {
           setPersons(persons.concat(person))
+          setMessageType('notification')
           setErrorMessage(`${person.name} has been added`)
           setTimeout(() => {
             setErrorMessage('')
@@ -82,6 +86,7 @@ const App = () => {
           .index()
           .then(persons => {
             setPersons(persons.filter(person => person.id !== id))
+            setMessageType('notification')
             setErrorMessage(`${name} has been deleted`)
             setTimeout(() => {
               setErrorMessage('')
@@ -94,7 +99,7 @@ const App = () => {
   return (
     <div>
       <h2>Phonebook</h2>
-      <ErrorMessage message={errorMessage}/>
+      <ErrorMessage message={errorMessage} type={messageType}/>
       <Input text='filter shown with ' func={changeFilter} />
       <h2>add a new</h2>
       <PersonForm changeName={changeName} changeNumber={changeNumber} addContact={addContact}/>

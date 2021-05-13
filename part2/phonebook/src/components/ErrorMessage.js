@@ -1,10 +1,14 @@
 import React from 'react'
 
-const ErrorMessage = ({message}) => {
+const ErrorMessage = ({message, type}) => {
   if (message === '') {
     return null
   }
-  return <div>{message}</div>
+  if (type === 'error') {
+    return <div className='error'>{message}</div>
+  } else {
+    return <div className='notification'>{message}</div>
+  }
 }
 
 export default ErrorMessage
