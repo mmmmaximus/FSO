@@ -20,6 +20,12 @@ const App = () => {
   const changeName = (event) => {
     setNewName(event.target.value)
   }
+  const clearInputs = () => {
+    setNewName('')
+    setNewNumber('')
+    document.getElementById('name').value = ''
+    document.getElementById('number').value = ''
+  }
 
   useEffect(() => {
     phonebookService
@@ -46,10 +52,7 @@ const App = () => {
                 setErrorMessage('')
               }, 1000)
             })
-          setNewName('')
-          setNewNumber('')
-          document.getElementById('name').value = ''
-          document.getElementById('number').value = ''
+          clearInputs()
         }
       }
     } else {
@@ -62,10 +65,7 @@ const App = () => {
             setErrorMessage('')
           }, 1000)
         })
-      setNewName('')
-      setNewNumber('')
-      document.getElementById('name').value = ''
-      document.getElementById('number').value = ''
+      clearInputs()
     }
   }
 
