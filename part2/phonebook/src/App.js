@@ -51,6 +51,11 @@ const App = () => {
               setTimeout(() => {
                 setErrorMessage('')
               }, 1000)
+            }).catch(err => {
+              setErrorMessage(`${newName} has already been deleted`)
+              setTimeout(() => {
+                setErrorMessage('')
+              }, 1000)
             })
           clearInputs()
         }
