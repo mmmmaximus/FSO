@@ -1,9 +1,8 @@
 import { render, screen } from '@testing-library/react'
-import { within } from '@testing-library/dom'
-import Content from '../Content'
+import Total from '../Total'
 import renderer from 'react-test-renderer'
 
-it('should render Content component', () => {
+it('should render Total component', () => {
   const course = {
     name: 'Half Stack application development',
     parts: [
@@ -21,14 +20,17 @@ it('should render Content component', () => {
       }
     ]
   }
-  // render Content component
-  render(<Content parts={course.parts}/>)
-  const ContentElement = screen.getByTestId('Content')
-  expect(ContentElement).toBeInTheDocument
+  // check render properly
+  render(<Total parts={course.parts}/>)
+  const TotalElement = screen.getByTestId('Total')
+  expect(TotalElement).toBeInTheDocument
 
-  // render contents of Content component
-  const PartsInContent = within(ContentElement).getAllByTestId('Part')
-  expect(PartsInContent.length).toBe(course.parts.length)
+  // check Total content
+  let total = 0
+  for (let i=0; i < course.parts.length; i++) {
+    total += course.parts[i].exercises
+  }
+  expect(TotalElement.textContent).toEqual(`Number of exercises ${total}`)
 })
 
 it('matches snapshot', () => {
@@ -49,7 +51,6 @@ it('matches snapshot', () => {
       }
     ]
   }
-  const tree = renderer.create(<Content parts={course.parts}/>).toJSON()
+  const tree = renderer.create(<Total parts={course.parts}/>).toJSON()
   expect(tree).toMatchSnapshot()
 })
-

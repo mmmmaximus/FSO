@@ -1,0 +1,10 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`matches snapshot 1`] = `
+<p
+  data-testid="Total"
+>
+  Number of exercises 
+  31
+</p>
+`;

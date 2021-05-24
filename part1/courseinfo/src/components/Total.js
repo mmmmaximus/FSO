@@ -7,7 +7,7 @@ const Total = (props) => {
   }
 
   return (
-    <p>
+    <p data-testid='Total'>
       Number of exercises {total}
     </p>
   )
