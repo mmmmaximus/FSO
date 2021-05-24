@@ -2,7 +2,7 @@ import React from 'react'
 
 const Part = (props) => {
   return (
-    <p>
+    <p data-testid='Part'>
       {props.name} {props.exercises}
     </p>
   )
