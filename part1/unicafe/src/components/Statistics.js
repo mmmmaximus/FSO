@@ -10,14 +10,16 @@ const Statistics = ({good, neutral, bad}) => {
     return <p>No feedback given</p>
   }
   return (
-    <tbody>
-      <Stats text='good' number={good}/>
-      <Stats text='neutral' number={neutral}/>
-      <Stats text='bad' number={bad}/>
-      <Stats text='all' number={all}/>
-      <Stats text='average' number={average}/>
-      <Stats text='positive' number={positive}/>
-    </tbody>
+    <table>
+      <tbody data-testid='Statistics'>
+        <Stats text='good' number={good}/>
+        <Stats text='neutral' number={neutral}/>
+        <Stats text='bad' number={bad}/>
+        <Stats text='all' number={all}/>
+        <Stats text='average' number={average}/>
+        <Stats text='positive' number={positive}/>
+      </tbody>
+    </table>
   )
 }
 

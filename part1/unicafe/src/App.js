@@ -9,7 +9,7 @@ const App = () => {
   const [bad, setBad] = useState(0)
 
   return (
-    <div>
+    <div data-testid='App'>
       <Header header='give feedback'/>
       <Button text='good' onClick={() => setGood(good +1)}/>
       <Button text='neutral' onClick={() => setNeutral(neutral +1)}/>

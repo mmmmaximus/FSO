@@ -1,0 +1,39 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`matches snapshot 1`] = `
+<div
+  data-testid="App"
+>
+  <h1
+    data-testid="Header"
+  >
+    give feedback
+  </h1>
+  <button
+    data-testid="Button"
+    onClick={[Function]}
+  >
+    good
+  </button>
+  <button
+    data-testid="Button"
+    onClick={[Function]}
+  >
+    neutral
+  </button>
+  <button
+    data-testid="Button"
+    onClick={[Function]}
+  >
+    bad
+  </button>
+  <h1
+    data-testid="Header"
+  >
+    statistics
+  </h1>
+  <p>
+    No feedback given
+  </p>
+</div>
+`;
