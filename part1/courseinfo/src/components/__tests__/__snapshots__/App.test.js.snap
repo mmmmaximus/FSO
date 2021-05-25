@@ -1,0 +1,44 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`matches snapshot 1`] = `
+<div
+  data-testid="App"
+>
+  <h1
+    data-testid="Header"
+  >
+    Half Stack application development
+  </h1>
+  <div
+    data-testid="Content"
+  >
+    <p
+      data-testid="Part"
+    >
+      Fundamentals of React
+       
+      10
+    </p>
+    <p
+      data-testid="Part"
+    >
+      Using props to pass data
+       
+      7
+    </p>
+    <p
+      data-testid="Part"
+    >
+      State of a component
+       
+      14
+    </p>
+  </div>
+  <p
+    data-testid="Total"
+  >
+    Number of exercises 
+    31
+  </p>
+</div>
+`;
