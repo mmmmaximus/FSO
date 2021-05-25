@@ -23,7 +23,7 @@ const App = () => {
   }
 
   return (
-    <div>
+    <div data-testid='App'>
       <Header course={course.name}/>
       <Content parts={course.parts}/>
       <Total parts={course.parts}/>
