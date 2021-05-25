@@ -1,0 +1,11 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`matches snapshot 1`] = `
+<p
+  data-testid="Part"
+>
+  Fundamentals of React
+   
+  10
+</p>
+`;

@@ -52,4 +52,3 @@ it('matches snapshot', () => {
   const tree = renderer.create(<Content parts={course.parts}/>).toJSON()
   expect(tree).toMatchSnapshot()
 })
-
