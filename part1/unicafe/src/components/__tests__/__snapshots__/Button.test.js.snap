@@ -1,41 +1,10 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`matches snapshot 1`] = `
-<div
-  data-testid="App"
+<button
+  data-testid="Button"
+  onClick={[MockFunction]}
 >
-  <h1
-    data-testid="Header"
-  >
-    give feedback
-  </h1>
-  <button
-    data-testid="Button"
-    onClick={[Function]}
-  >
-    good
-  </button>
-  <button
-    data-testid="Button"
-    onClick={[Function]}
-  >
-    neutral
-  </button>
-  <button
-    data-testid="Button"
-    onClick={[Function]}
-  >
-    bad
-  </button>
-  <h1
-    data-testid="Header"
-  >
-    statistics
-  </h1>
-  <p
-    data-testid="Statistics"
-  >
-    No feedback given
-  </p>
-</div>
+  test text
+</button>
 `;

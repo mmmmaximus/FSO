@@ -36,6 +36,7 @@ test('good, neutral and bad buttons work', () => {
 })
 
 it('matches snapshot', () => {
-  const tree = renderer.create(<App />).toJSON()
+  const mockfn = jest.fn()
+  const tree = renderer.create(<Button text='test text' onClick={mockfn} />).toJSON()
   expect(tree).toMatchSnapshot()
 })
