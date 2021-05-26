@@ -7,7 +7,7 @@ const Statistics = ({good, neutral, bad}) => {
   const positive = good / all * 100 + '%'
 
   if (all===0) {
-    return <p>No feedback given</p>
+    return <p data-testid='Statistics'>No feedback given</p>
   }
   return (
     <table>
