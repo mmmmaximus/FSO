@@ -1,0 +1,70 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`matches snapshot 1`] = `
+<table>
+  <tbody
+    data-testid="Statistics"
+  >
+    <tr
+      data-testid="Stats"
+    >
+      <td>
+        good
+      </td>
+      <td>
+        1
+      </td>
+    </tr>
+    <tr
+      data-testid="Stats"
+    >
+      <td>
+        neutral
+      </td>
+      <td>
+        2
+      </td>
+    </tr>
+    <tr
+      data-testid="Stats"
+    >
+      <td>
+        bad
+      </td>
+      <td>
+        3
+      </td>
+    </tr>
+    <tr
+      data-testid="Stats"
+    >
+      <td>
+        all
+      </td>
+      <td>
+        6
+      </td>
+    </tr>
+    <tr
+      data-testid="Stats"
+    >
+      <td>
+        average
+      </td>
+      <td>
+        -0.3333333333333333
+      </td>
+    </tr>
+    <tr
+      data-testid="Stats"
+    >
+      <td>
+        positive
+      </td>
+      <td>
+        16.666666666666664%
+      </td>
+    </tr>
+  </tbody>
+</table>
+`;
