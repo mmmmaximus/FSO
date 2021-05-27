@@ -1,0 +1,46 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`matches snapshot 1`] = `
+<div
+  data-testid="App"
+>
+  <h1
+    data-testid="Header"
+  >
+    Anecdote of the day
+  </h1>
+  If it hurts, do it more often
+  <br />
+  has 
+  0
+   votes
+  <div
+    data-testid="Button"
+  >
+    <button
+      onClick={[Function]}
+    >
+      vote
+    </button>
+  </div>
+  <div
+    data-testid="Button"
+  >
+    <button
+      onClick={[Function]}
+    >
+      next anecdote
+    </button>
+  </div>
+  <h1
+    data-testid="Header"
+  >
+    Anecdote with most votes
+  </h1>
+  If it hurts, do it more often
+  <br />
+  has 
+  0
+   votes
+</div>
+`;

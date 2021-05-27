@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
-import Header from './Header'
-import Button from './Button'
+import Header from './components/Header'
+import Button from './components/Button'
 
 const App = () => {
   const anecdotes = [
@@ -11,7 +11,7 @@ const App = () => {
     'Premature optimization is the root of all evil.',
     'Debugging is twice as hard as writing the code in the first place. Therefore, if you write the code as cleverly as possible, you are, by definition, not smart enough to debug it.'
   ]
-   
+
   const [selected, setSelected] = useState(0)
   let array = new Array(anecdotes.length)
   for (let i=0; i<anecdotes.length; i++) {
@@ -25,19 +25,19 @@ const App = () => {
   }
 
   return (
-    <div>
+    <div data-testid='App'>
       <Header text='Anecdote of the day'/>
       {anecdotes[selected]}
       <br></br>
       has {votes[selected]} votes
-      <Button 
+      <Button
         text='vote'
-        onClick={vote}  
-        />
-      <Button 
-        text='next anecdote' 
+        onClick={vote}
+      />
+      <Button
+        text='next anecdote'
         onClick={() => setSelected(Math.ceil((anecdotes.length - 1) * Math.random()))}
-        />
+      />
       <Header text='Anecdote with most votes'/>
       {anecdotes[votes.indexOf(Math.max(...votes))]}
       <br></br>
