@@ -97,7 +97,7 @@ const App = () => {
   }
 
   return (
-    <div>
+    <div data-testid='App'>
       <h2>Phonebook</h2>
       <ErrorMessage message={errorMessage} type={messageType}/>
       <Input text='filter shown with ' func={changeFilter} />

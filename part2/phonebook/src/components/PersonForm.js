@@ -3,7 +3,7 @@ import Input from './Input'
 
 const PersonForm = ({changeName, changeNumber, addContact}) => {
   return (
-    <form>
+    <form data-testid='PersonForm'>
       <Input id='name' text='name: ' func={changeName} />
       <Input id='number' text='number: ' func={changeNumber} />
       <div>
