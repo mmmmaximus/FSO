@@ -1,0 +1,53 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`matches snapshot 1`] = `
+<div
+  data-testid="App"
+>
+  <h2>
+    Phonebook
+  </h2>
+  <div>
+    filter shown with 
+    <input
+      onChange={[Function]}
+    />
+  </div>
+  <h2>
+    add a new
+  </h2>
+  <form
+    data-testid="PersonForm"
+  >
+    <div>
+      name: 
+      <input
+        id="name"
+        onChange={[Function]}
+      />
+    </div>
+    <div>
+      number: 
+      <input
+        id="number"
+        onChange={[Function]}
+      />
+    </div>
+    <div>
+      <button
+        onClick={[Function]}
+        type="submit"
+      >
+        add
+      </button>
+    </div>
+  </form>
+  <h2>
+    Numbers
+  </h2>
+  <div
+    data-testid="Persons"
+  />
+  ...
+</div>
+`;
