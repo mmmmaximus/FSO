@@ -1,0 +1,10 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ErrorMessage component renders properly when matches snapshot 1`] = `
+<div
+  className="notification"
+  data-testid="ErrorMessage"
+>
+  error message
+</div>
+`;

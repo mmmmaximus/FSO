@@ -5,9 +5,9 @@ const ErrorMessage = ({message, type}) => {
     return null
   }
   if (type === 'error') {
-    return <div className='error'>{message}</div>
+    return <div data-testid='ErrorMessage' className='error'>{message}</div>
   } else {
-    return <div className='notification'>{message}</div>
+    return <div data-testid='ErrorMessage' className='notification'>{message}</div>
   }
 }
 
